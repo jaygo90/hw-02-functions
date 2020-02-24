@@ -31,6 +31,21 @@ console.log('Problem 1:')
 
 // Add your code below this line
 
+function blackJack (playerCardScore, dealerCardScore) {
+  if (playerCardScore > 21 && dealerCardScore > 21) {
+    return 0
+  } else if (playerCardScore > 21) {
+    return "Dealer wins"
+  } else if (dealerCardScore > 21 ) {
+    return "Player wins"
+  } else {
+    return Math.max(playerCardScore, dealerCardScore)
+  }
+}
+
+ console.log(blackJack(14, 16))
+
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -76,6 +91,31 @@ console.log('Problem 2:')
 
 // Add your code below this line
 
+function myScore (word){
+  const letters = word.toUpperCase().split('')
+  let sum = 0
+  letters.forEach((letter) => {
+    if (["A", "E", "I", "O", "U", "L", "N", "R", "S", "T"].includes(letter)){
+    sum += 1
+  }  else if (["D", "G"].includes(letter)) {
+    sum += 2
+  }  else if (["B", "C", "M", "P"].includes(letter)) {
+    sum += 3
+  }  else if (["F", "H", "V", "W", "Y"].includes(letter)) {
+    sum += 4
+  }  else if (["k"].includes(letter)) {
+    sum += 5
+  } else if (["J", "X"].includes(letter)){
+    sum += 8
+  } else if (["q", "z"].includes(letter)){
+    sum += 10
+  }
+})
+return sum
+}
+
+console.log(myScore("quiz"))
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -115,6 +155,14 @@ console.log('Problem 3:')
 
 // Add your code below this line
 
+
+
+const isPalindrome = word => word === word.split('').reverse().join('');
+
+console.log(isPalindrome("tired"))
+
+
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -147,6 +195,18 @@ Use the following test cases to confirm your program meets the success criteria
 console.log('Problem 4:')
 
 // Add your code below this line
+
+function doubleLetters(word){
+  for(i = 0; i <= word.length; i++) {
+        for(var j = i+1; j <= word.length; j++) {
+            if(word[j] == word[i]) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+console.log(doubleLetters("apple"))
 
 // Add your code above this line
 
